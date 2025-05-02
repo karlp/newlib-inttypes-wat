@@ -65,3 +65,8 @@ podman run --rm -v .:/project:Z -w /project localhost/ubu-arm:24.04 arm-none-eab
 ```
 
 (it's the same thing)
+
+### Distro check...
+Debian 12.10: works fine (uses old newlib 3.3, yay, debian stability!)
+Ubuntu 24.04 LTS: fails
+Debian testing-20250428: fails (newlib 4.5.0)
