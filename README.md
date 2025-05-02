@@ -51,3 +51,17 @@ wth?!
 I don't know.  the inttypes.h files in the container and in my arm gcc tree are identical.
 I've found some comment that this is related to gcc's stdint not doing things in the right order, and that the "fix"
 is to include ```<sys/types.h>``` first, but.... wth. I mean, it works, but... that can't be right...
+
+
+## I hate your "build" command
+Want to see it with a "main" instead?
+
+```
+arm-none-eabi-gcc --specs=nosys.specs -Wall -Wextra -Os hate-main.c
+```
+vs 
+```
+podman run --rm -v .:/project:Z -w /project localhost/ubu-arm:24.04 arm-none-eabi-gcc --specs=nosys.specs -Wall -Wextra -Os hate-main.c
+```
+
+(it's the same thing)
